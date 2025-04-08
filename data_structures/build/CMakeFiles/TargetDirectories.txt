@@ -1,3 +1,0 @@
-/home/ruben/Desktop/CMPR131/data_structures/build/CMakeFiles/data_structures.dir
-/home/ruben/Desktop/CMPR131/data_structures/build/CMakeFiles/edit_cache.dir
-/home/ruben/Desktop/CMPR131/data_structures/build/CMakeFiles/rebuild_cache.dir

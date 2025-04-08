@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 3.10)
-project(data_structures)
-add_executable(data_structures src/main.cpp src/LinkedList.cpp)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)

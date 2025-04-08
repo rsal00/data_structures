@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/data_structures.dir/src/main.cpp.o CMakeFiles/data_structures.dir/src/LinkedList.cpp.o -o data_structures 
