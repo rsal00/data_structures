@@ -11,7 +11,7 @@ LinkedList::LinkedList() : size(0)
 
 LinkedList::~LinkedList()
 {
-    destory();
+    destroy();
 }
 
 LinkedList::LinkedList(const LinkedList& other)
@@ -55,7 +55,7 @@ void LinkedList::add(int d)
     }
 }
 
-void LinkedList::destory()
+void LinkedList::destroy()
 {
     Node* current = first;
     while (current)
@@ -194,7 +194,7 @@ LinkedList& LinkedList::operator=(const LinkedList& rhs)
 {
     if (this != &rhs)
     {
-        destory();
+        destroy();
 
         Node* current = rhs.first;
         while (current)

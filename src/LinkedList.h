@@ -20,7 +20,7 @@ public:
 
     void add(int d);
 
-    void destory();
+    void destroy();
 
     void printPrev(int ele);
 
