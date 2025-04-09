@@ -20,13 +20,13 @@ public:
 
     void add(int d);
 
-    void destroy();
-
     void printPrev(int ele);
 
     void removeFirst();
     void removeLast();
     void remove(int d);
+
+    void clear();
 
     friend std::ostream& operator<<(std::ostream& out, const LinkedList& list);
     LinkedList& operator=(const LinkedList& rhs);
