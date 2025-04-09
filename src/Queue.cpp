@@ -28,6 +28,12 @@ Queue::Queue(const Queue& otherQ)
 
 void Queue::enqueue(int data)
 {
+    if (!arr)
+    {
+        cerr << "Failed allocation!" << endl;
+        return;
+    }
+
     if (isFull())
     {
         cerr << "Queue is full!" << endl;
