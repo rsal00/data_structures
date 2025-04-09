@@ -1,6 +1,5 @@
 #include "LinkedList.h"
 #include <iostream>
-#include <ostream>
 using namespace std;
 
 LinkedList::LinkedList() : size(0)
@@ -11,7 +10,7 @@ LinkedList::LinkedList() : size(0)
 
 LinkedList::~LinkedList()
 {
-    destroy();
+    clear();
 }
 
 LinkedList::LinkedList(const LinkedList& other)
@@ -53,20 +52,6 @@ void LinkedList::add(int d)
             size++;
         }
     }
-}
-
-void LinkedList::destroy()
-{
-    Node* current = first;
-    while (current)
-    {
-        Node* temp = current->next;
-        delete current;
-        current = temp;
-    }
-    first = nullptr;
-    last = nullptr;
-    size = 0;
 }
 
 void LinkedList::printPrev(int ele)
@@ -143,12 +128,13 @@ void LinkedList::remove(int d)
         cerr << "List is empty" << endl;
         return;
     }
+
     Node* current = first;
     while (current)
     {
-        Node* temp;
         if (current->data == d)
         {
+            Node* temp = nullptr;
             if (current == first)
             {
                 first = current->next;
@@ -178,6 +164,20 @@ void LinkedList::remove(int d)
     }
 }
 
+void LinkedList::clear()
+{
+    Node* current = first;
+    while (current)
+    {
+        Node* temp = current->next;
+        delete current;
+        current = temp;
+    }
+    first = nullptr;
+    last = nullptr;
+    size = 0;
+}
+
 ostream& operator<<(std::ostream& out, const LinkedList& list)
 {
     LinkedList::Node* current = list.first;
@@ -194,7 +194,7 @@ LinkedList& LinkedList::operator=(const LinkedList& rhs)
 {
     if (this != &rhs)
     {
-        destroy();
+        clear();
 
         Node* current = rhs.first;
         while (current)
