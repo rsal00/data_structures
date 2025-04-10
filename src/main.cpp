@@ -2,23 +2,20 @@
 #include "LinkedList.h"
 #include "Queue.h"
 #include "Stack.h"
+#include "HashTable.h"
 using namespace std;
 
 int main()
 {
-    LinkedList li;
+    HashTable h;
 
-    li.add(1);
-    li.add(2);
-    li.add(3);
-    li.add(4);
-    li.add(5);
+    h.insert("Luka Doncic", 77);
+    h.insert("Lebron James", 23);
+    h.insert("Michael Jordan", 23);
+    h.insert("Kobe Bryant", 24);
+    h.insert("Nikola Jokic", 15);
 
-    li.remove(1);
-    li.remove(100);
-    li.remove(5);
-
-    cout << li << endl;
+    h.printTable();
 
     return 0;
 }
