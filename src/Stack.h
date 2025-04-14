@@ -4,6 +4,7 @@
 
 #include <ostream>
 
+template <typename T>
 class Stack
 {
 public:
@@ -11,11 +12,11 @@ public:
     ~Stack();
     Stack(const Stack& other);
 
-    void push(int data);
-    void pop();
+    void push(T data);
+    void pop(T& data);
     void clear();
 
-    int peek() const;
+    T peek() const;
     int getCap() const;
     int getSize() const;
     int getTop() const;
@@ -23,14 +24,18 @@ public:
     bool isFull() const;
     bool isEmpty() const;
 
-    friend std::ostream& operator<<(std::ostream& out, const Stack& s);
+    template <typename t>
+    friend std::ostream& operator<<(std::ostream& out, const Stack<t>& s);
+
     Stack& operator=(const Stack& rhs);
 
 private:
     int capacity;
     int size;
     int top;
-    int* arr;
+    T* arr;
 };
+
+#include "Stack.tpp"
 
 #endif
